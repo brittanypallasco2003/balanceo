@@ -30,3 +30,12 @@ services:
     container_name: servidor3
     ports:
       - 5003:5000
+  
+  locust:
+    image: locustio/locust:latest
+    container_name: locust
+    ports:
+      - 8089:8089
+    volumes:
+      - C:\Users\APP DISTRIBUIDAS\Desktop\balanceo:/mnt/locust
+    command: ["-f","/mnt/locust/locustfile.py"]
